@@ -1,0 +1,6 @@
+{
+    "extends": "@slimio/eslint-config",
+    "rules": {
+        "no-extra-parens": "off"
+    }
+}

@@ -1,18 +1,37 @@
 {
-  "name": "wcwidth",
-  "version": "1.0.1",
+  "name": "@slimio/wcwidth",
+  "version": "1.0.0",
   "description": "Port of C's wcwidth() and wcswidth()",
   "author": "Tim Oxley",
   "contributors": [
-    "Woong Jun <woong.jun@gmail.com> (http://code.woong.org/)"
+    "Woong Jun <woong.jun@gmail.com> (http://code.woong.org/)",
+    "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>"
   ],
-  "main": "index.js",
-  "dependencies": {
-    "defaults": "^1.0.3"
+  "engines": {
+    "node": ">=10"
   },
+  "main": "index.js",
+  "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@escommunity/minami": "^1.0.0",
+    "@slimio/eslint-config": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "husky": "^3.0.1",
+    "nyc": "^14.1.1",
+    "pkg-ok": "^2.3.1",
     "tape": "^4.5.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "cross-env npm test && eslint index.js src/**",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "files": [
+    "src/combining.js"
+  ],
   "license": "MIT",
   "keywords": [
     "wide character",
@@ -29,7 +48,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "prepublishOnly": "pkg-ok",
+    "doc": "jsdoc -c ./jsdoc.json -r -R ./README.md -P ./package.json --verbose",
+    "coverage": "nyc npm test",
+    "report": "nyc report --reporter=html"
   },
   "repository": {
     "type": "git",

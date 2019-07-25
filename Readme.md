@@ -2,15 +2,37 @@
 
 Determine columns needed for a fixed-size wide-character string
 
-----
+> wcwidth is a simple JavaScript port of [wcwidth](http://man7.org/linux/man-pages/man3/wcswidth.3.html) implemented in C by Markus Kuhn.
+>
+> JavaScript port [originally](https://github.com/mycoboco/wcwidth.js) written by Woong Jun <woong.jun@gmail.com> (http://code.woong.org/)
 
-wcwidth is a simple JavaScript port of [wcwidth](http://man7.org/linux/man-pages/man3/wcswidth.3.html) implemented in C by Markus Kuhn.
+## Why
 
-JavaScript port [originally](https://github.com/mycoboco/wcwidth.js) written by Woong Jun <woong.jun@gmail.com> (http://code.woong.org/)
+This package is a fork of [wcwidth](https://github.com/timoxley/wcwidth#readme).
 
-## Example
+- Drop old Node.js version support.
+- Drop useless `defaults` package wich introduce an indirect dependencies.
+- Cleanup npm tarball (only ship required files).
+- Supported by the SlimIO Team.
+
+## Requirements
+- [Node.js](https://nodejs.org/en/) v10 or higher
+
+## Getting Started
+
+This package is available in the Node Package Repository and can be easily installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or [yarn](https://yarnpkg.com).
+
+```bash
+$ npm i @slimio/wcwidth
+# or
+$ yarn add @slimio/wcwidth
+```
+
+## Usage example
 
 ```js
+const wcwidth = require("@slimio/wcwidth");
+
 '한'.length    // => 1
 wcwidth('한');   // => 2
 
@@ -26,8 +48,13 @@ Markus's implementation assumes the wide character given to those
 functions to be encoded in ISO 10646, which is almost true for
 JavaScript's characters.
 
-[Further explaination here](docs)
+[Further explaination here](https://github.com/timoxley/wcwidth/tree/master/docs)
+
+## API
+TBC
+
+## Dependencies
+This project have no dependencies.
 
 ## License
-
 MIT
