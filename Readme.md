@@ -4,6 +4,7 @@
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 ![dep](https://img.shields.io/david/SlimIO/wcwidth)
 [![Known Vulnerabilities](https://snyk.io//test/github/SlimIO/wcwidth/badge.svg?targetFile=package.json)](https://snyk.io//test/github/SlimIO/wcwidth?targetFile=package.json)
+[![Build Status](https://travis-ci.com/SlimIO/wcwidth.svg?branch=master)](https://travis-ci.com/SlimIO/wcwidth)
 
 Determine columns needed for a fixed-size wide-character string
 
