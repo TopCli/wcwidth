@@ -13,13 +13,13 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@escommunity/minami": "^1.0.0",
     "@slimio/eslint-config": "^4.0.0-next.3",
-    "cross-env": "^5.2.0",
-    "eslint": "^6.1.0",
-    "husky": "^3.0.1",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.7.0",
+    "husky": "^3.1.0",
     "japa": "^3.0.1",
     "nyc": "^14.1.1",
     "pkg-ok": "^2.3.1"
