@@ -16,7 +16,7 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@escommunity/minami": "^1.0.0",
-    "@slimio/eslint-config": "^3.0.2",
+    "@slimio/eslint-config": "^4.0.0-next.3",
     "cross-env": "^5.2.0",
     "eslint": "^6.1.0",
     "husky": "^3.0.1",
@@ -31,8 +31,8 @@
     }
   },
   "files": [
-      "index.js",
-      "index.d.ts",
+    "index.js",
+    "index.d.ts",
     "src/combining.js"
   ],
   "license": "MIT",
