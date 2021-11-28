@@ -4,6 +4,7 @@
 [![Security Responsible Disclosure](https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg)](https://github.com/nodejs/security-wg/blob/master/processes/responsible_disclosure_template.md
 )
 [![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/TopCli/wcwidth/blob/master/LICENSE)
+![build](https://img.shields.io/github/workflow/status/TopCli/wcwidth/Node.js%20CI)
 
 Determine columns needed for a fixed-size wide-character string
 
