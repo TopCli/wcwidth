@@ -1,11 +1,9 @@
 # wcwidth
-![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/SlimIO/wcwidth/master/package.json?token=AOgWw3vrgQuu-U4fz1c7yYZyc7XJPNtrks5catjdwA%3D%3D&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/wcwidth/commit-activity)
-![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
-![size](https://img.shields.io/github/languages/code-size/SlimIO/wcwidth)
-![dep](https://img.shields.io/david/SlimIO/wcwidth)
-[![Known Vulnerabilities](https://snyk.io//test/github/SlimIO/wcwidth/badge.svg?targetFile=package.json)](https://snyk.io//test/github/SlimIO/wcwidth?targetFile=package.json)
-[![Build Status](https://travis-ci.com/SlimIO/wcwidth.svg?branch=master)](https://travis-ci.com/SlimIO/wcwidth)
+![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/TopCli/wcwidth/master/package.json&query=$.version&label=Version)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/TopCli/wcwidth/commit-activity)
+[![Security Responsible Disclosure](https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg)](https://github.com/nodejs/security-wg/blob/master/processes/responsible_disclosure_template.md
+)
+[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/TopCli/wcwidth/blob/master/LICENSE)
 
 Determine columns needed for a fixed-size wide-character string
 
@@ -20,25 +18,24 @@ This package is a fork of [wcwidth](https://github.com/timoxley/wcwidth#readme).
 - Drop old Node.js version support.
 - Drop useless `defaults` package wich introduce an indirect dependencies.
 - Cleanup npm tarball (only ship required files).
-- Supported by the SlimIO Team.
 
 ## Requirements
-- [Node.js](https://nodejs.org/en/) v12 or higher
+- [Node.js](https://nodejs.org/en/) v14 or higher
 
 ## Getting Started
 
 This package is available in the Node Package Repository and can be easily installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or [yarn](https://yarnpkg.com).
 
 ```bash
-$ npm i @slimio/wcwidth
+$ npm i @topcli/wcwidth
 # or
-$ yarn add @slimio/wcwidth
+$ yarn add @topcli/wcwidth
 ```
 
 ## Usage example
 
 ```js
-const wcwidth = require("@slimio/wcwidth");
+import wcwidth from "@topcli/wcwidth";
 
 '한'.length    // => 1
 wcwidth('한');   // => 2
@@ -59,9 +56,6 @@ JavaScript's characters.
 
 ## API
 TBC
-
-## Dependencies
-This project have no dependencies.
 
 ## License
 MIT

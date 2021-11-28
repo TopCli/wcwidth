@@ -1,24 +1,10 @@
-"use strict";
-
 // Require Internal Dependencies
-const combining = require("./src/combining");
+import combining from "./src/combining.js";
 
 // CONSTANTS
-const DEFAULTS = {
-    nul: 0,
-    control: 0
-};
-
-module.exports = function wcwidth(str) {
-    return wcswidth(str, DEFAULTS);
-};
-
-module.exports.config = function config(opts = {}) {
-    const defaults = Object.assign({}, DEFAULTS, opts);
-
-    return function wcwidth(str) {
-        return wcswidth(str, defaults);
-    };
+const kDefaultOptions = {
+  nul: 0,
+  control: 0
 };
 
 /**
@@ -49,21 +35,21 @@ module.exports.config = function config(opts = {}) {
  *    width of 1.
  *  This implementation assumes that characters are encoded in ISO 10646.
  */
-function wcswidth(str, opts) {
-    if (typeof str !== "string") {
-        return wcwidth(str, opts);
-    }
+export default function wcswidth(str, opts = kDefaultOptions) {
+  if (typeof str !== "string") {
+    return wcwidth(str, opts);
+  }
 
-    let width = 0;
-    for (let id = 0; id < str.length; id++) {
-        const charWidth = wcwidth(str.charCodeAt(id), opts);
-        if (charWidth < 0) {
-            return -1;
-        }
-        width += charWidth;
+  let width = 0;
+  for (let id = 0; id < str.length; id++) {
+    const charWidth = wcwidth(str.charCodeAt(id), opts);
+    if (charWidth < 0) {
+      return -1;
     }
+    width += charWidth;
+  }
 
-    return width;
+  return width;
 }
 
 /**
@@ -73,34 +59,34 @@ function wcswidth(str, opts) {
  * @returns {number}
  */
 function wcwidth(ucs, opts) {
-    // test for 8-bit control characters
-    if (ucs === 0) {
-        return opts.nul;
-    }
-    if (ucs < 32 || (ucs >= 0x7f && ucs < 0xa0)) {
-        return opts.control;
-    }
+  // test for 8-bit control characters
+  if (ucs === 0) {
+    return opts.nul;
+  }
+  if (ucs < 32 || (ucs >= 0x7f && ucs < 0xa0)) {
+    return opts.control;
+  }
 
-    // binary search in table of non-spacing characters
-    if (bisearch(ucs)) {
-        return 0;
-    }
+  // binary search in table of non-spacing characters
+  if (bisearch(ucs)) {
+    return 0;
+  }
 
-    // if we arrive here, ucs is not a combining or C0/C1 control character
-    return 1 +
-        (ucs >= 0x1100 &&
-            (ucs <= 0x115f ||
-                ucs === 0x2329 || ucs === 0x232a ||
-                (ucs >= 0x2e80 && ucs <= 0xa4cf &&
-                    ucs !== 0x303f) ||
-                (ucs >= 0xac00 && ucs <= 0xd7a3) ||
-                (ucs >= 0xf900 && ucs <= 0xfaff) ||
-                (ucs >= 0xfe10 && ucs <= 0xfe19) ||
-                (ucs >= 0xfe30 && ucs <= 0xfe6f) ||
-                (ucs >= 0xff00 && ucs <= 0xff60) ||
-                (ucs >= 0xffe0 && ucs <= 0xffe6) ||
-                (ucs >= 0x20000 && ucs <= 0x2fffd) ||
-                (ucs >= 0x30000 && ucs <= 0x3fffd)));
+  // if we arrive here, ucs is not a combining or C0/C1 control character
+  return 1 +
+    (ucs >= 0x1100 &&
+      (ucs <= 0x115f ||
+        ucs === 0x2329 || ucs === 0x232a ||
+        (ucs >= 0x2e80 && ucs <= 0xa4cf &&
+          ucs !== 0x303f) ||
+        (ucs >= 0xac00 && ucs <= 0xd7a3) ||
+        (ucs >= 0xf900 && ucs <= 0xfaff) ||
+        (ucs >= 0xfe10 && ucs <= 0xfe19) ||
+        (ucs >= 0xfe30 && ucs <= 0xfe6f) ||
+        (ucs >= 0xff00 && ucs <= 0xff60) ||
+        (ucs >= 0xffe0 && ucs <= 0xffe6) ||
+        (ucs >= 0x20000 && ucs <= 0x2fffd) ||
+        (ucs >= 0x30000 && ucs <= 0x3fffd)));
 }
 
 /**
@@ -109,25 +95,25 @@ function wcwidth(ucs, opts) {
  * @returns {boolean}
  */
 function bisearch(ucs) {
-    let min = 0;
-    let max = combining.length - 1;
+  let min = 0;
+  let max = combining.length - 1;
 
-    if (ucs < combining[0][0] || ucs > combining[max][1]) {
-        return false;
-    }
-
-    while (max >= min) {
-        const mid = Math.floor((min + max) / 2);
-        if (ucs > combining[mid][1]) {
-            min = mid + 1;
-        }
-        else if (ucs < combining[mid][0]) {
-            max = mid - 1;
-        }
-        else {
-            return true;
-        }
-    }
-
+  if (ucs < combining[0][0] || ucs > combining[max][1]) {
     return false;
+  }
+
+  while (max >= min) {
+    const mid = Math.floor((min + max) / 2);
+    if (ucs > combining[mid][1]) {
+      min = mid + 1;
+    }
+    else if (ucs < combining[mid][0]) {
+      max = mid - 1;
+    }
+    else {
+      return true;
+    }
+  }
+
+  return false;
 }
