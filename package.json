@@ -2,7 +2,7 @@
   "name": "@topcli/wcwidth",
   "version": "1.0.0",
   "description": "Port of C's wcwidth() and wcswidth()",
-  "author": "SlimIO",
+  "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "type": "module",
   "exports": "./index.js",
   "contributors": [
