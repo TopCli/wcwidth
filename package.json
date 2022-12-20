@@ -1,6 +1,6 @@
 {
   "name": "@topcli/wcwidth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Port of C's wcwidth() and wcswidth()",
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "type": "module",
