@@ -3,6 +3,4 @@ export interface wcsOptions {
   control?: number;
 }
 
-declare function wcswidth(str: string, opts?: wcsOptions): number;
-
-export = wcswidth;
+export default function wcswidth(str: string, opts?: wcsOptions): number;
