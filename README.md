@@ -1,8 +1,10 @@
 # wcwidth
-![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/TopCli/wcwidth/master/package.json&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/TopCli/wcwidth/commit-activity)
-[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/TopCli/wcwidth/blob/master/LICENSE)
-![build](https://img.shields.io/github/workflow/status/TopCli/wcwidth/Node.js%20CI)
+![version](https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/TopCli/wcwidth/master/package.json&query=$.version&label=Version)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/TopCli/wcwidth/commit-activity)
+[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=for-the-badge)](https://github.com/TopCli/wcwidth/blob/master/LICENSE)
+[![OpenSSF
+Scorecard](https://api.securityscorecards.dev/projects/github.com/TopCli/wcwidth/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/TopCli/wcwidth)
+![build](https://img.shields.io/github/actions/workflow/status/TopCli/wcwidth/node.js.yml?style=for-the-badge)
 
 Determine columns needed for a fixed-size wide-character string
 
