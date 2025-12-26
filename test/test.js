@@ -1,8 +1,8 @@
-// Require Node.js Dependencies
+// Import Node.js Dependencies
 import { test } from "node:test";
 import assert from "node:assert";
 
-// Require Internal Dependencies
+// Import Internal Dependencies
 import wcwidth from "../index.js";
 
 test("handles regular strings", () => {
@@ -43,13 +43,13 @@ test("can have custom value for nul", () => {
   }), 15);
 });
 
-test("can have custom control char value", (tape) => {
+test("can have custom control char value", () => {
   assert.strictEqual(wcwidth("abc\n字的模块\ndef", {
     control: 1
   }), 16);
 });
 
-test("negative custom control chars == -1", (tape) => {
+test("negative custom control chars == -1", () => {
   assert.strictEqual(wcwidth("abc\n字的模块\ndef", {
     control: -1
   }), -1);
